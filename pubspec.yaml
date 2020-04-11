@@ -1,8 +1,8 @@
 name: fule_swiper
 description: fule_swiper
 version: 0.0.1
-author:Xuhao Yang
-homepage:
+author: Yang-Xuhao
+homepage: https://github.com/Yang-Xuhao/fule_swiper
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

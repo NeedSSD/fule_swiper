@@ -1,6 +1,8 @@
 # fule_swiper
 一个简单的Swiper组件。
+
 <img src="https://i.loli.net/2020/04/11/DwQPZs5fh7XlKrO.gif"  width="40%"/>
+
 ## 开始
 ### 安装
 在pubspec.yaml中添加引用
