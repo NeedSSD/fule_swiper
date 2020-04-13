@@ -21,8 +21,8 @@ class DotSequence extends StatelessWidget {
   Widget build(BuildContext context) {
     //定义normal圆点
     Widget _normalDot = Container(
-      height: radius*2,
-      width: radius*2,
+      height: radius * 2,
+      width: radius * 2,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
@@ -30,8 +30,8 @@ class DotSequence extends StatelessWidget {
     );
     //定义active圆点
     Widget _activeDot = Container(
-      height: radius*2,
-      width: radius*2,
+      height: radius * 2,
+      width: radius * 2,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: activeColor,
@@ -39,14 +39,16 @@ class DotSequence extends StatelessWidget {
     );
     //定义间距
     Widget _spacing = SizedBox(
-      height: radius*2,
+      height: radius * 2,
       width: spacing,
     );
     //生成圆点列表
     List<Widget> _dotList = List();
     for (var i = 0; i < itemCount; i++) {
       i == current ? _dotList.add(_activeDot) : _dotList.add(_normalDot);
-      i == itemCount - 1 ? {} : _dotList.add(_spacing);
+      if (i != itemCount - 1) {
+        _dotList.add(_spacing);
+      }
     }
 
     return Row(

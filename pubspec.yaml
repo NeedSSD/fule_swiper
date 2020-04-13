@@ -1,6 +1,6 @@
 name: fule_swiper
-description: fule_swiper
-version: 0.0.1
+description: fule_swiper is a simple swiper widget. After setting the width and height, it allows you to use any widget as a child widget.
+version: 0.1.0
 author: Yang-Xuhao
 homepage: https://github.com/Yang-Xuhao/fule_swiper
 
