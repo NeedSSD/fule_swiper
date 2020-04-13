@@ -1,5 +1,8 @@
 # fule_swiper
-一个简单的Swiper组件。
+![Pub Version](https://img.shields.io/pub/v/fule_swiper?style=flat-square)
+![GitHub](https://img.shields.io/github/license/Yang-Xuhao/fule_swiper?style=flat-square)
+
+一个简单的Swiper组件，它允许你在其中放置任意的组件。
 
 <img src="https://i.loli.net/2020/04/11/DwQPZs5fh7XlKrO.gif"  width="40%"/>
 
@@ -7,7 +10,7 @@
 ### 安装
 在pubspec.yaml中添加引用
 ``` yaml
-fule_swiper: ^0.0.1
+fule_swiper: ^0.1.1
 ```
 下载插件
 ```shell
@@ -100,20 +103,20 @@ class _MyAppState extends State<MyApp> {
 ### 参数
 | 属性 | 类型 | 默认值 | 必填 | 说明 | 组件版本 |
 | --- | --- | --- | :---: | --- | :---: |
-| width| double | 100.0 | 否 | 组件的宽度 | 0.0.1 |
-| height | double | 100.0 | 否 | 组件的高度 | 0.0.1 |
-| children | List&lt;Widget&gt; | - | 是 |  | 0.0.1 |
-| current | int | 0 | 否 | 默认选中的下标 | 0.0.1 |
-| autoplay | bool | false | 否 | 是否自动切换 | 0.0.1 |
-| interval | int | 2000 | 否 | 自动切换时间间隔 | 0.0.1 |
-| duration | int | 1000 | 否 | 滑动动画时长 | 0.0.1 |
-| curve | Curve | Curves.ease | 否 | 滑动动画 | 0.0.1 |
-| indicatorDot | bool | true | 否 | 是否显示指示点 | 0.0.1 |
-| indicatorColor | Color | Colors.white | 否 | 指示点默认颜色 | 0.0.1 |
-| indicatorActiveColor | Color | Colors.white | 否 | 指示点选中颜色 | 0.0.1 |
-| indicatorRadius | double | 4.0 | 否 | 指示点半径 | 0.0.1 |
-| indicatorSpacing | double | 8.0 | 否 | 指示点间距 | 0.0.1 |
-| onPageChanged | bool | - | 否 | 切换回调函数 | 0.0.1 |
+| width| double | 100.0 | 否 | 组件的宽度 | 0.1.0 |
+| height | double | 100.0 | 否 | 组件的高度 | 0.1.0 |
+| children | List&lt;Widget&gt; | - | 是 |  | 0.1.0 |
+| current | int | 0 | 否 | 默认选中的下标 | 0.1.0 |
+| autoplay | bool | false | 否 | 是否自动切换 | 0.1.0 |
+| interval | int | 2000 | 否 | 自动切换时间间隔 | 0.1.0 |
+| duration | int | 1000 | 否 | 滑动动画时长 | 0.1.0 |
+| curve | Curve | Curves.ease | 否 | 滑动动画 | 0.1.0 |
+| indicatorDot | bool | true | 否 | 是否显示指示点 | 0.1.0 |
+| indicatorColor | Color | Colors.white | 否 | 指示点默认颜色 | 0.1.0 |
+| indicatorActiveColor | Color | Colors.white | 否 | 指示点选中颜色 | 0.1.0 |
+| indicatorRadius | double | 4.0 | 否 | 指示点半径 | 0.1.0 |
+| indicatorSpacing | double | 8.0 | 否 | 指示点间距 | 0.1.0 |
+| onPageChanged | bool | - | 否 | 切换回调函数 | 0.1.0 |
 
 ## TODO
 - [ ] 实现纵向滑动
