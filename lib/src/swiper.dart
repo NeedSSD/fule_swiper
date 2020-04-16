@@ -17,6 +17,7 @@ class Swiper extends StatefulWidget {
   final Color indicatorActiveColor;
   final double indicatorRadius;
   final double indicatorSpacing;
+  final Alignment indicatorAlignment;
   final ValueChanged<int> onPageChanged;
 
   Swiper({
@@ -34,6 +35,7 @@ class Swiper extends StatefulWidget {
     this.indicatorActiveColor = Colors.blue,
     this.indicatorRadius = 4.0,
     this.indicatorSpacing = 8.0,
+    this.indicatorAlignment = Alignment.bottomCenter,
     this.onPageChanged,
   })  : assert(children != null),
         assert(duration <= interval),
@@ -93,6 +95,25 @@ class _SwiperState extends State<Swiper> {
           }));
     }
 
+    //是否显示指示器
+    Widget getIndicatorDot() {
+      if (widget.indicatorDot) {
+        return Align(
+          alignment: widget.indicatorAlignment,
+          child: DotSequence(
+            radius: widget.indicatorRadius,
+            spacing: widget.indicatorSpacing,
+            color: widget.indicatorColor,
+            activeColor: widget.indicatorActiveColor,
+            current: this._index,
+            itemCount: widget.children.length,
+          ),
+        );
+      } else {
+        return SizedBox();
+      }
+    }
+
     return Container(
       color: Colors.transparent,
       width: widget.width,
@@ -108,17 +129,7 @@ class _SwiperState extends State<Swiper> {
                   widget.onPageChanged?.call(index);
                 });
               }),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: DotSequence(
-              radius: widget.indicatorRadius,
-              spacing: widget.indicatorSpacing,
-              color: widget.indicatorColor,
-              activeColor: widget.indicatorActiveColor,
-              current: this._index,
-              itemCount: widget.children.length,
-            ),
-          ),
+          getIndicatorDot()
         ],
       ),
     );

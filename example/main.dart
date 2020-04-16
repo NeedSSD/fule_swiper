@@ -11,64 +11,66 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List images = [
+    {
+      "src": "https://i.loli.net/2020/04/16/gpIVeN8a2m93nXt.jpg",
+      "desc": "小船在水上"
+    },
+    {
+      "src": "https://i.loli.net/2020/04/16/zRf7qoAlJV6kIcN.jpg",
+      "desc": "冰雪覆盖"
+    },
+    {
+      "src": "https://i.loli.net/2020/04/16/eQx6rlmXNiwUzPO.jpg",
+      "desc": "绿色中的棕房子"
+    },
+  ];
+
+  List<Widget> getImages() {
+    List<Widget> _list = List();
+    images.forEach((_item) {
+      _list.add(Stack(
+        children: <Widget>[
+          Image.network(
+            _item['src'],
+            fit: BoxFit.fitHeight,
+            width: 750,
+            height: 1334,
+          ),
+          Align(
+            alignment: Alignment(-0.9, 0.3),
+            child: Text(
+              _item['desc'],
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 48,
+              ),
+            ),
+          )
+        ],
+      ));
+    });
+    return _list;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.cyan,
         body: Center(
           child: Swiper(
-            width: 200,
-            height: 300,
+            width: 750,
+            height: 1334,
             autoplay: true,
             duration: 500,
             interval: 2000,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 200,
-                    height: 300,
-                    child: Text('Page One'),
-                    color: Colors.red,
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 150,
-                  ),
-                  Container(
-                    width: 200,
-                    height: 150,
-                    child: Text('Page Two'),
-                    color: Colors.green,
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 100,
-                  ),
-                  Container(
-                    width: 200,
-                    height: 100,
-                    child: Text('Page Three'),
-                    color: Colors.yellow,
-                  ),
-                  Icon(
-                    Icons.star,
-                    color: Colors.orange,
-                  ),
-                  Text(
-                    'Give me a like please,thx! ;)',
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
-              ),
-            ],
+            indicatorActiveColor: Colors.white,
+            indicatorColor: Colors.white38,
+            indicatorRadius: 4,
+            indicatorSpacing: 16,
+            indicatorAlignment: Alignment(0, 0.95),
+            children: getImages(),
           ),
         ),
       ),

@@ -1,3 +1,9 @@
+## [0.1.2] 2020-04-16
+
+* 修复indicatorDot无效的问题
+* 添加indicatorAlignment控制指示点位置
+* 更新了例子
+
 ## [0.1.1] 2020-04-13
 
 * 把上次的CHANGELOG补上
